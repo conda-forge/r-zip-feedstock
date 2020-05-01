@@ -13,8 +13,8 @@ source:
   sha256: ab5dd0c63bd30b478d0f878735e7baf36e2e76e4d12d2b4b8eddd03b665502b0
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  merge_build_host: true  # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,16 +23,16 @@ requirements:
   build:
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
 
 test:
   commands:
@@ -41,9 +41,8 @@ test:
 
 about:
   home: https://github.com/r-lib/zip#readme
-  license: CC0
-  summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that
-    does not require any additional external tools on any platform.
+  license: CC0-1.0
+  summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
   license_family: CC
 
 extra:
