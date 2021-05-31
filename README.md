@@ -3,7 +3,7 @@ About r-zip
 
 Home: https://github.com/r-lib/zip#readme
 
-Package license: CC0-1.0
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-zip-feedstock/blob/master/LICENSE.txt)
 
