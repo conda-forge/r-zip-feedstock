@@ -16,23 +16,29 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ posix }}filesystem        # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
     - r-base
+    - r-cli
   run:
     - r-base
+    - r-cli
 
 test:
   commands:
@@ -40,32 +46,15 @@ test:
     - "\"%R%\" -e \"library('zip')\""  # [win]
 
 about:
-  home: https://github.com/r-lib/zip#readme
+  home: https://r-lib.github.io/zip/
+  dev_url: https://github.com/r-lib/zip
   license: MIT
   summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
-  license_family: CC
-
+  license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: zip
-# Title: Cross-Platform 'zip' Compression
-# Version: 2.0.3
-# Author: Gabor Csardi, Kuba Podgorski, Rich Geldreich
-# Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
-# Description: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
-# License: CC0
-# LazyData: true
-# URL: https://github.com/r-lib/zip#readme
-# BugReports: https://github.com/r-lib/zip/issues
-# RoxygenNote: 6.1.1
-# Suggests: covr, processx, R6, testthat, withr
-# Encoding: UTF-8
-# NeedsCompilation: yes
-# Packaged: 2019-07-03 10:27:59 UTC; gaborcsardi
-# Repository: CRAN
-# Date/Publication: 2019-07-03 10:50:40 UTC
