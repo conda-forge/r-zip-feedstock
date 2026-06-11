@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-zip-feedstock
 About r-zip
 -----------
 
-Home: https://github.com/r-lib/zip#readme
+Home: https://r-lib.github.io/zip/
 
 Package license: MIT
 
 Summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
+
+Development: https://github.com/r-lib/zip
 
 About r-zip
 -----------
 
-Home: https://github.com/r-lib/zip#readme
+Home: https://r-lib.github.io/zip/
 
 Package license: MIT
 
 Summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
+
+Development: https://github.com/r-lib/zip
 
 Current build status
 ====================
